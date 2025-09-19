@@ -11,10 +11,10 @@ int grados;
 bool avanzar,retroceder;
 void setup()
 {
-	servo1.attach(A1);
-  	servo2.attach(A2);
-  	servo1.write(0);
-  	servo2.write(0);
+	servon1.attach(A1);
+  	servon2.attach(A2);
+  	servon1.write(0);
+  	servon2.write(0);
 	pinMode(adelante, INPUT);
   	pinMode(atras, INPUT);
     Serial.begin(9600);
@@ -29,7 +29,7 @@ void loop()
   	avanza();
   }
   if (retroceder==LOW){
-    atrasas();
+    atras();
   }
   Serial.println(avanzar);
   Serial.println(retroceder);
@@ -37,15 +37,15 @@ void loop()
 }
 void avanza(){
   	grados+=10;
-	servo1.write(grados);
-  	servo2.write(grados);
+	servon1.write(grados);
+  	servon2.write(grados);
      delay(1000);
   
 }
-void atrasas(){
+void atras(){
   	grados-=10;
-	servo1.write(grados);
-  	servo2.write(grados);
+	servon1.write(grados);
+  	servon2.write(grados);
      delay(1000);
   
 }
